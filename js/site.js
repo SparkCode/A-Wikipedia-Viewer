@@ -1,11 +1,11 @@
 $(document).ready(function () {
     $(".list-group-item").addClass("animated fadeInUp");
     
-    
-    $("#searchButton").click(function () {
+    $("form").submit(function (event) {
         var searchString = document.getElementById("search-box").value;
         getWikiData(searchString, showNewRequestData, 0)
-    });
+        event.preventDefault();
+    })
 
     $("#get-next-page").click(function () {
         var page = $("#next-page")[0].value;
@@ -27,7 +27,7 @@ function getWikiData(searchString, callback, offset) {
 }
 
 function showNewRequestData(json) {
-    $("#page-end")[0].setAttribute("hidden", null);
+    $("#result-end")[0].setAttribute("hidden", null);
     $(".article").empty();
     showData(json);
 }
@@ -38,8 +38,8 @@ function showData(json) {
     }
     else
     {
-        $("#get-next-page")[0].setAttribute("hidden", null);
-        $("#page-end").removeAttr("hidden");
+        $("#get-next-page").addClass("hidden", null);
+        $("#result-end").removeAttr("hidden");
         return;
     }
 
@@ -48,7 +48,7 @@ function showData(json) {
     });
 
     $(".article")[0].innerHTML +="<hr>";
-    $("#get-next-page").removeAttr("hidden");
+    $("#get-next-page").removeClass("hidden");
 }
 
 

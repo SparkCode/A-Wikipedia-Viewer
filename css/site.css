@@ -25,5 +25,15 @@
 }
 
 hr {
-    border-top: 1px solid #3c3c3c;
+    border-top: 2px solid #ffffff;
+}
+
+form {
+    margin: 60px auto 20px auto;
+}
+
+@media (max-width: 768px) {
+    .list-group{
+        margin: 10px 10px 10px 10px;
+    }
 }

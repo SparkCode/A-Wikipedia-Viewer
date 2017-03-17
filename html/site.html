@@ -6,34 +6,36 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/site.css">
     <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
     <script src="../js/jquery-3.1.1.js"></script>
     <script src="../js/site.js"></script>
 </head>
 <body>
 <div class="container-fluid">
     <div class="jumbotron">
-        <h1 class="text-center">The Wikipedia Viewer</h1>
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <input class="form-control" placeholder="search an article" id="search-box" value="Google">
+        <h1 class="text-center"><i class="fa fa-wikipedia-w" aria-hidden="true"></i> Wikipedia Viewer</h1>
+        <form>
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <input class="form-control" placeholder="search an article" id="search-box" value="Google">
+                </div>
             </div>
-        </div>
 
-        <div class="text-center" id="search-buttons">
-            <button type="button" class="btn btn-default" id="searchButton">Wiki Search</button>
-            <a type="button" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"
-               class="btn btn-default">I'm Feeling Lucky</a>
-        </div>
-
+            <div class="text-center" id="search-buttons">
+                <button type="submit" class="btn btn-primary" id="searchButton">Wiki Search</button>
+                <a type="button" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"
+                   class="btn btn-default">I'm Feeling Lucky</a>
+            </div>
+        </form>
 
         <div class="row article">
         </div>
 
         <div class="text-center">
-            <button id="get-next-page" hidden>Next page</button>
+            <button id="get-next-page" class="btn btn-primary hidden">Next page</button>
         </div>
 
-        <p class="text-center" id="page-end" hidden>There's the end of the result</p>
+        <p class="text-center" id="result-end" hidden>There's the end of the results</p>
     </div>
 </div>
 

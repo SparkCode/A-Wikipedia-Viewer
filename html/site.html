@@ -7,50 +7,47 @@
     <link rel="stylesheet" href="../css/site.css">
     <link rel="stylesheet" href="../css/animate.css">
     <script src="../js/jquery-3.1.1.js"></script>
-    <script>
-        $(document).ready(function () {
-            $(".list-group-item").addClass("animated fadeInUp");
-        })
-    </script>
+    <script src="../js/site.js"></script>
 </head>
 <body>
 <div class="container-fluid">
     <div class="jumbotron">
         <h1 class="text-center">The Wikipedia Viewer</h1>
         <div class="row">
-            <div class="input-group">
-                <input class="form-control" placeholder="search an article">
-                <span class="input-group-btn">
-                    <button class="btn">OK</button>
-                </span>
+            <div class="col-md-8 col-md-offset-2">
+                <input class="form-control" placeholder="search an article" id="search-box" value="Google">
             </div>
         </div>
 
-        <div class="row">
-            <div class="list-group">
-                <div class="list-group-item">
-                    <h3>The margin CSS property sets the margin for all four sides.</h3>
-                    <p>The margin CSS property sets the margin for all four sides. It is a shorthand to avoid setting each side separately with the other margin properties</p>
-                </div>
-                <div class="list-group-item">
-                    <h3>The margin CSS property sets the margin for all four sides.</h3>
-                    <p>The margin CSS property sets the margin for all four sides. It is a shorthand to avoid setting each side separately with the other margin properties</p>
-                </div>
-                <div class="list-group-item">
-                    <h3>The margin CSS property sets the margin for all four sides.</h3>
-                    <p>The margin CSS property sets the margin for all four sides. It is a shorthand to avoid setting each side separately with the other margin properties</p>
-                </div>
-                <div class="list-group-item">
-                    <h3>The margin CSS property sets the margin for all four sides.</h3>
-                    <p>The margin CSS property sets the margin for all four sides. It is a shorthand to avoid setting each side separately with the other margin properties</p>
-                </div>
-                <div class="list-group-item">
-                    <h3>The margin CSS property sets the margin for all four sides.</h3>
-                    <p>The margin CSS property sets the margin for all four sides. It is a shorthand to avoid setting each side separately with the other margin properties</p>
-                </div>
-            </div>
+        <div class="text-center" id="search-buttons">
+            <button type="button" class="btn btn-default" id="searchButton">Wiki Search</button>
+            <a type="button" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"
+               class="btn btn-default">I'm Feeling Lucky</a>
         </div>
+
+
+        <div class="row article">
+        </div>
+
+        <div class="text-center">
+            <button id="get-next-page" hidden>Next page</button>
+        </div>
+
+        <p class="text-center" id="page-end" hidden>There's the end of the result</p>
     </div>
 </div>
+
+<div hidden>
+    <div class="list-group">
+        <div class="list-group-item">
+            <h3><a class="title" target="_blank"></a></h3>
+            <p class="description">The margin CSS property sets the margin for all four sides. It is a shorthand to
+                avoid setting each side separately with the other margin properties</p>
+        </div>
+    </div>
+    <input id="next-page">
+</div>
+
+
 </body>
 </html>

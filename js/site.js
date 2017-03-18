@@ -1,9 +1,9 @@
 $(document).ready(function () {
-    $(".list-group-item").addClass("animated fadeInUp");
+    $(".list-group").addClass("animated");
     
     $("form").submit(function (event) {
         var searchString = document.getElementById("search-box").value;
-        getWikiData(searchString, showNewRequestData, 0)
+        getWikiData(searchString, showNewRequestData, 0);
         event.preventDefault();
     })
 
@@ -33,6 +33,7 @@ function showNewRequestData(json) {
 }
 
 function showData(json) {
+    $(".animated").removeClass("fadeInUp");
     if (json.hasOwnProperty("continue")){
         $("#next-page")[0].value = json.continue.sroffset;
     }
@@ -55,6 +56,7 @@ function showData(json) {
 function showListElement(title, description) {
 
     var element =  $(".list-group:first").clone();
+    element.addClass("fadeInUp");
     var titleElement = element.find(".title")[0];
     titleElement.innerHTML = title;
     titleElement.href = "https://en.wikipedia.org/wiki/" + encodeURI(title);

@@ -36,4 +36,8 @@ form {
     .list-group{
         margin: 10px 10px 10px 10px;
     }
+
+    form {
+        margin-top: 40px;
+    }
 }
